@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* หน้าแรก */
+#page1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* หน้าที่ 2 */
+#page2 {
+    display: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 30px;
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #764ba2;
+    cursor: pointer;
+}
+
+img {
+    max-width: 260px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+}
+
+.text {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* หัวใจตก */
+.floating {
+    position: fixed;
+    top: -50px;
+    animation: fall 6s linear infinite;
+    z-index: 999;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- หน้าแรก -->
+<div id="page1">
+    <button onclick="nextPage()">💖 กดเพื่อเปิดจดหมายรัก</button>
+</div>
+
+<!-- หน้า 2 -->
+<div id="page2">
+    <!-- เปลี่ยนตรงนี้เป็น path ของคุณ -->
+    <img src="love.jpg" alt="รูปเรา">
+
+    <div class="text">
+ตั้งแต่มีเธอเข้ามาในชีวิต<br>
+ทุกวันของเค้ามันไม่เหมือนเดิมเลย<br><br>
+
+จากวันที่ธรรมดา ๆ<br>
+มันกลายเป็นวันที่น่าจดจำทุกวัน 💖<br><br>
+
+เธออาจจะไม่รู้ตัวนะ...<br>
+ว่าแค่เธอยิ้ม หรืออยู่เฉย ๆ<br>
+มันก็ทำให้เค้ามีความสุขได้มากขนาดไหน 🥺<br><br>
+
+เค้าอาจจะไม่ได้พูดเก่ง<br>
+แต่ความรู้สึกที่มีให้เธอ<br>
+มันจริงทุกอย่างเลยนะ 💞<br><br>
+
+อยู่ด้วยกันไปนาน ๆ นะ 💖<br>
+จุ๊บบ~~ 😙
+    </div>
+
+    <br>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="200" alt="gif">
+</div>
+
+<script>
+function nextPage() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+
+// สร้างหัวใจตก
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.className = "floating";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*30) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6500);
+}, 250);
+</script>
+
+</body>
+</html>
