@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 30px;
+}
+
+img {
+    width: 260px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.text {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.floating {
+    position: fixed;
+    top: -50px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="love.jpg">
+
+<div class="text">
+จากวันแรกที่เราได้รู้จักกัน...<br>
+มันอาจจะดูธรรมดา<br><br>
+
+แต่สำหรับเค้า มันคือจุดเริ่มต้นของอะไรที่พิเศษมาก ๆ 💖<br><br>
+
+ทุกช่วงเวลาที่มีเธออยู่<br>
+มันกลายเป็นช่วงเวลาที่เค้าอยากเก็บไว้ทั้งหมดเลย<br><br>
+
+เค้าอาจจะไม่ได้เก่งเรื่องพูดหวาน<br>
+แต่สิ่งนึงที่ชัดมากคือ...<br><br>
+
+<b>เค้ารู้สึกดีกับเธอมาก ๆ เลยนะ 🥺💞</b><br><br>
+
+ขอบคุณที่อยู่ข้างกันแบบนี้<br>
+ไม่ว่าจะวันธรรมดาหรือวันที่แย่ ๆ<br><br>
+
+ขอให้อยู่ด้วยกันไปนาน ๆ เลยนะ 💖<br><br>
+
+จุ๊บบ~~ 😙
+</div>
+
+<br>
+
+<!-- GIF -->
+<img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="200">
+
+</div>
+
+<script>
+// สุ่มหัวใจตกลงมา
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.className = "floating";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 300);
+</script>
+
+</body>
+</html>
