@@ -8,21 +8,41 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color: white;
     text-align: center;
-    overflow-x: hidden;
 }
 
-.container {
+/* หน้าแรก */
+#page1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* หน้าที่ 2 */
+#page2 {
+    display: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
     padding: 30px;
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #764ba2;
+    cursor: pointer;
 }
 
 img {
     width: 260px;
     border-radius: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
 .text {
@@ -31,6 +51,7 @@ img {
     line-height: 1.8;
 }
 
+/* หัวใจตก */
 .floating {
     position: fixed;
     top: -50px;
@@ -47,41 +68,48 @@ img {
 
 <body>
 
-<div class="container">
+<!-- หน้าแรก -->
+<div id="page1">
+    <button onclick="nextPage()">💖</button>
+</div>
+
+<!-- หน้า 2 -->
+<div id="page2">
 
 <img src="love.jpg">
 
 <div class="text">
-จากวันแรกที่เราได้รู้จักกัน...<br>
-มันอาจจะดูธรรมดา<br><br>
+ตั้งแต่มีเธอเข้ามาในชีวิต<br>
+ทุกวันของเค้ามันไม่เหมือนเดิมเลย<br><br>
 
-แต่สำหรับเค้า มันคือจุดเริ่มต้นของอะไรที่พิเศษมาก ๆ 💖<br><br>
+จากวันที่ธรรมดา ๆ<br>
+มันกลายเป็นวันที่น่าจดจำทุกวัน 💖<br><br>
 
-ทุกช่วงเวลาที่มีเธออยู่<br>
-มันกลายเป็นช่วงเวลาที่เค้าอยากเก็บไว้ทั้งหมดเลย<br><br>
+เธออาจจะไม่รู้ตัวนะ...<br>
+ว่าแค่เธอยิ้ม หรืออยู่เฉย ๆ<br>
+มันก็ทำให้เค้ามีความสุขได้มากขนาดไหน 🥺<br><br>
 
-เค้าอาจจะไม่ได้เก่งเรื่องพูดหวาน<br>
-แต่สิ่งนึงที่ชัดมากคือ...<br><br>
+เค้าอาจจะไม่ได้พูดเก่ง<br>
+แต่ความรู้สึกที่มีให้เธอ<br>
+มันจริงทุกอย่างเลยนะ 💞<br><br>
 
-<b>เค้ารู้สึกดีกับเธอมาก ๆ เลยนะ 🥺💞</b><br><br>
-
-ขอบคุณที่อยู่ข้างกันแบบนี้<br>
-ไม่ว่าจะวันธรรมดาหรือวันที่แย่ ๆ<br><br>
-
-ขอให้อยู่ด้วยกันไปนาน ๆ เลยนะ 💖<br><br>
-
+อยู่ด้วยกันไปนาน ๆ นะ 💖<br>
 จุ๊บบ~~ 😙
 </div>
 
 <br>
 
-<!-- GIF -->
 <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="200">
 
 </div>
 
 <script>
-// สุ่มหัวใจตกลงมา
+function nextPage() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+
+// สร้างหัวใจตก
 setInterval(() => {
     let heart = document.createElement("div");
     heart.innerHTML = "💖";
