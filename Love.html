@@ -40,9 +40,10 @@ button {
 }
 
 img {
-    width: 260px;
+    max-width: 260px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin: 20px auto;
+    display: block;
 }
 
 .text {
@@ -56,6 +57,8 @@ img {
     position: fixed;
     top: -50px;
     animation: fall 6s linear infinite;
+    z-index: 999;
+    pointer-events: none;
 }
 
 @keyframes fall {
@@ -70,15 +73,15 @@ img {
 
 <!-- หน้าแรก -->
 <div id="page1">
-    <button onclick="nextPage()">💖</button>
+    <button onclick="nextPage()">💖 กดเพื่อเปิดจดหมายรัก</button>
 </div>
 
 <!-- หน้า 2 -->
 <div id="page2">
+    <!-- เปลี่ยนตรงนี้เป็น path ของคุณ -->
+    <img src="love.jpg" alt="รูปเรา">
 
-<img src="love.jpg">
-
-<div class="text">
+    <div class="text">
 ตั้งแต่มีเธอเข้ามาในชีวิต<br>
 ทุกวันของเค้ามันไม่เหมือนเดิมเลย<br><br>
 
@@ -95,12 +98,10 @@ img {
 
 อยู่ด้วยกันไปนาน ๆ นะ 💖<br>
 จุ๊บบ~~ 😙
-</div>
+    </div>
 
-<br>
-
-<img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="200">
-
+    <br>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="200" alt="gif">
 </div>
 
 <script>
@@ -115,13 +116,13 @@ setInterval(() => {
     heart.innerHTML = "💖";
     heart.className = "floating";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (20 + Math.random()*20) + "px";
+    heart.style.fontSize = (20 + Math.random()*30) + "px";
     document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
-    }, 6000);
-}, 300);
+    }, 6500);
+}, 250);
 </script>
 
 </body>
